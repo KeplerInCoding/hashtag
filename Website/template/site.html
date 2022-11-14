@@ -20,7 +20,7 @@ img {margin-bottom: -8px;}
 <header class="w3-display-container w3-center">
   <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button>
   <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="/Users/coding/Documents/vs/age+gen_det/static/board.png" alt="Image 1" style="min-width:500px" width="1500" height="1000">
+    <img class="w3-image" src="{{ url_for('static', filename='board.png') }}" alt="Image 1" style="min-width:500px" width="1500" height="1000">
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
         <h1 class="w3-xlarge">Detect faces with our app</h1>
@@ -31,7 +31,7 @@ img {margin-bottom: -8px;}
     </div>
   </div>
   <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="/Users/coding/Documents/vs/age+gen_det/static/age1.png" alt="Image 2" style="min-width:500px" width="1500" height="1000">
+    <img class="w3-image" src="{{ url_for('static', filename='age1.png') }}" alt="Image 2" style="min-width:500px" width="1500" height="1000">
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
         <h1 class="w3-xlarge w3-text-red"><b>CLICK!</b> Fast and Easy</h1>
@@ -42,7 +42,7 @@ img {margin-bottom: -8px;}
     </div>
   </div>
   <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="/Users/coding/Documents/vs/age+gen_det/static/gender1.jpeg" alt="Image 3" style="min-width:500px" width="1500" height="1000">
+    <img class="w3-image" src="{{ url_for('static', filename='gender1.jpeg') }}" alt="Image 3" style="min-width:500px" width="1500" height="1000">
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
       <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
         <h1 class="w3-xlarge">Smart Design</h1>
@@ -66,6 +66,14 @@ img {margin-bottom: -8px;}
         This app is a face detection, tracking app that provides fast and accurate features of facial features detection.<br><br>
         You can allow camera to access or load the image to detect from Google Drive, Computer, Webcam, and Clipboard directly.<br><br>
         This app can be used in: Survey Analysis, Intrusion Detection, Anamoly Detection, Biometric Detection.</p>
+        <div class="w3-button w3-block w3-padding-large">
+          <nav>
+              <ul type="circle">
+                  <li><a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" href="http://127.0.0.1:5000/video" onclick="plusDivs(1)">TRY DEMO<i class="fa fa-angle-right"></i></a>
+                    <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" href="http://127.0.0.1:5000/video" onclick="plusDivs(1)">TRY DEMO<i class="fa fa-angle-right"></i></a></li>
+              </ul>
+          </nav>
+      </div>
       <div color="#8A9A5B">Image formats: jpg, jpeg, png, gif, bmp...<br> Supports: Chrome, IE10+, Firefox, Safari..</div>
       <button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small" onclick="document.getElementById('download').style.display='block'">
         <i class="fa fa-download"></i> Download Extension
@@ -73,12 +81,12 @@ img {margin-bottom: -8px;}
       <p>Available for <i class="fa fa-android w3-xlarge w3-text-green"></i> <i class="fa fa-apple w3-xlarge"></i> <i class="fa fa-windows w3-xlarge w3-text-blue"></i></p>
     </div>
     <div class="w3-col l4 m6">
-      <img src="/Users/coding/Documents/vs/age+gen_det/static/fd.png" class="w3-image w3-right w3-hide-small" width="335" height="471">
+      <img src="{{ url_for('static', filename='fd.png') }}" class="w3-image w3-right w3-hide-small" width="335" height="471">
       <div class="w3-center w3-hide-large w3-hide-medium">
         <button class="w3-button w3-block w3-padding-large" onclick="document.getElementById('download').style.display='block'">
-          <i class="fa fa-download"></i> Download Extension
+          <i class="fa fa-download"></i>Download Extension
         </button>
-        <img src="/Users/coding/Documents/vs/age+gen_det/static/clarity.png" class="w3-image w3-margin-top" width="335" height="471">
+        <img src="{{ url_for('static', filename='clarity.png') }}" class="w3-image w3-margin-top" width="335" height="471">
       </div>
     </div>
   </div>
@@ -102,7 +110,7 @@ img {margin-bottom: -8px;}
 <div class="w3-padding-64 w3-light-grey">
   <div class="w3-row-padding">
     <div class="w3-col l4 m6">
-      <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="/Users/coding/Documents/vs/age+gen_det/static/clarity.png" alt="App" width="335" height="471">
+      <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="{{ url_for('static', filename='clarity.png') }}" alt="App" width="335" height="471">
     </div>
     <div class="w3-col l8 m6">
       <h1 class="w3-jumbo"><b>#Clarity</b></h1>
