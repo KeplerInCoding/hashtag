@@ -85,11 +85,12 @@
 
   ### Website:
 
-https://github.com/aksshatgovind/Age-and-Gender-Detection/assets/105073216/a1bf5223-8b89-4add-9bf1-b608f49b5c64
+https://github.com/aksshatgovind/Age-and-Gender-Detection/assets/105073216/b4084157-2a70-4154-a842-ca567e0c4946
 
   ### Prototype:
 
- 
+https://github.com/aksshatgovind/Age-and-Gender-Detection/assets/105073216/e15cc2b3-52da-48b3-ad95-f587786317ca
+
  # EXTENSION:
  
  <p><b>NOTE:- Our website which will provide link to download the extension, is still in progress. We'll keep updating to the contents of this Repository, and thank you for your time.</b></p>
