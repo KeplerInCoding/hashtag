@@ -80,6 +80,15 @@
     Age: 38-43 years
     
 <img src="Example/Detecting age and gender woman1.png">
+
+ # PREVIEW:
+
+  ### Website:
+
+https://github.com/aksshatgovind/Age-and-Gender-Detection/assets/105073216/a1bf5223-8b89-4add-9bf1-b608f49b5c64
+
+  ### Prototype:
+
  
  # EXTENSION:
  
