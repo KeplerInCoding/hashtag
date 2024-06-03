@@ -108,5 +108,5 @@ def video():
     # return Response(gen_frame(), mimetype='multipart/x-mixed-replace; boundary=frame')
     return render_template('vid.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
