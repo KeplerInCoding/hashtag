@@ -27,10 +27,24 @@ faceNet=cv2.dnn.readNet(faceModel,faceProto)
 ageNet=cv2.dnn.readNet(ageModel,ageProto)
 genderNet=cv2.dnn.readNet(genderModel,genderProto)
 
+cam = cv2.VideoCapture(0)
+
+def gen_frame():
+    while True:
+        success, frame = cam.read()
+        if not success:
+            break
+        else:
+            ret, buffer = cv2.imencode('.jpg', frame)
+            frame = buffer.tobytes()
+
+        yield(b'--frame\r\n'
+                    b'Content-Type: image/jpeg\r\n\r\n' +frame + b'\r\n')
+
 def video_capture():  
     while True:
        
-        success, frame = video.read()  
+        success, frame = cam.read()  
         if not success:
             break
         else:
@@ -75,23 +89,23 @@ def video_capture():
 
                 cv2.putText(frameOpencvDnn, f'{gender}, {age}', (faceBox[0], faceBox[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,255,255), 2, cv2.LINE_AA)
 
-            ret, buffer = cv2.imencode('.jpg', frame)
+            ret, buffer = cv2.imencode('.jpg', frameOpencvDnn)
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  
 
 
-@app.route('/',methods=['GET'])
+@app.route('/')
 def index():
-    return render_template('site.html')
+    return render_template('index.html')
 
-@app.route('/video_feed',methods=['GET'])
+@app.route('/video_feed')
 def video_feed():
     return Response(video_capture(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-@app.route('/video',methods=['GET'])
+@app.route('/video')
 def video():
-    # Response(video_capture(), mimetype='multipart/x-mixed-replace; boundary=frame')
+    # return Response(gen_frame(), mimetype='multipart/x-mixed-replace; boundary=frame')
     return render_template('vid.html')
 
 if __name__ == '__main__':

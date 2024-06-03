@@ -16,16 +16,26 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-body {font-size: 16px;}
-img {max-width: 100%; height: auto;}
-.mySlides {display: none;}
+body,h1,h2,h3,h4,h5 {
+  font-family: "Poppins", sans-serif
+}
+
+body {
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%; height: auto;
+}
+
+.mySlides {
+  display: none;
+}
 
 body {
     margin: 0; 
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    background-image: url('your-background-image.jpg'); 
     background-size: cover; 
     background-position: center; 
 }
@@ -157,10 +167,10 @@ body {
 
 
       <div id="feed" class="w3-padding-64 w3-white">
-        <h1 class="w3-jumbo"><b>Video Feed</b></h1>
+        <h1 class="w3-jumbo"><b>Detector</b></h1>
         <p class="w3-large">Live camera feed with age and gender detection</p>
         <div class="video-container">
-            <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Video Feed">
+            <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Video Feed" width="70%">
         </div>
     </div>
 
@@ -174,7 +184,11 @@ body {
       <p>Download the extension in AppStore, Google Play or Microsoft Store.</p>
       <i class="fa fa-android w3-large"></i> <i class="fa fa-apple w3-large"></i> <i class="fa fa-windows w3-large"></i>
       <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
-      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('download').style.display='none'">Download Extension</button>
+      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('download').style.display='none'">
+        <a href="{{ url_for('static', filename='GAD.zip') }}" download>
+          <i class="fa fa-download"></i> Download Extension
+        </a>
+      </button>
     </div>
   </div>
 </div>
@@ -285,12 +299,10 @@ body {
 <!-- Footer -->
 <footer id="f" class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge">
   <div class="w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.pinterest.com" target="_blank"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+    <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
   </div>
   <p class="w3-medium">Powered by hashtag, 2024</p>
 </footer>

@@ -43,55 +43,63 @@
     Gender: Female
     Age: 25-32 years
     
-<img src="Example/Detecting age and gender girl1.png">
+<img src="assets/Detecting age and gender girl1.png">
 
     >python gad.py --image Detecting age and gender girl2.png
     Gender: Female
     Age: 8-12 years
     
-<img src="Example/Detecting age and gender girl2.png">
+<img src="assets/Detecting age and gender girl2.png">
 
     >python gad.py --image Detecting age and gender kid1.png
     Gender: Male
     Age: 4-6 years    
     
-<img src="Example/Detecting age and gender kid1.png">
+<img src="assets/Detecting age and gender kid1.png">
 
     >python gad.py --image Detecting age and gender kid2.png
     Gender: Female
     Age: 4-6 years  
     
-<img src="Example/Detecting age and gender kid2.png">
+<img src="assets/Detecting age and gender kid2.png">
 
     >python gad.py --image Detecting age and gender man1.png
     Gender: Male
     Age: 38-43 years
     
-<img src="Example/Detecting age and gender man1.png">
+<img src="assets/Detecting age and gender man1.png">
 
     >python gad.py --image Detecting age and gender man2.png
     Gender: Male
     Age: 25-32 years
     
-<img src="Example/Detecting age and gender man2.png">
+<img src="assets/Detecting age and gender man2.png">
 
     >python gad.py --image Detecting age and gender woman1.png
     Gender: Female
     Age: 38-43 years
     
-<img src="Example/Detecting age and gender woman1.png">
+<img src="assets/Detecting age and gender woman1.png">
 
  # PREVIEW:
 
   ### Website:
 
-https://github.com/aksshatgovind/Age-and-Gender-Detection/assets/105073216/b4084157-2a70-4154-a842-ca567e0c4946
+
+![Home Page](./assets/home1.png)
+![Home Page](./assets/home2.png)
+![Home Page](./assets/home3.png)
+![Home Page](./assets/home4.png)
 
   ### Prototype:
 
 https://github.com/aksshatgovind/Age-and-Gender-Detection/assets/105073216/e15cc2b3-52da-48b3-ad95-f587786317ca
 
  # EXTENSION:
+
+ ### Click 'Download Extension' to download our GAD.exe file
+
+<br><br>
  
- <p><b>NOTE:- Our website which will provide link to download the extension, is still in progress. We'll keep updating to the contents of this Repository, and thank you for your time.</b></p>
+ <p><b>NOTE:- We have completed with our executable extension for now. We'll keep updating to the contents of this repo, and thank you for your time.</b></p>
  
