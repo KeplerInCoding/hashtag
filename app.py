@@ -7,7 +7,7 @@ app = Flask(__name__,template_folder='template',static_folder='static')
 parser=argparse.ArgumentParser()
 parser.add_argument('--image')
 
-args=parser.parse_args()
+args, unknown = parser.parse_known_args()
 
 faceProto="./model/opencv_face_detector.pbtxt"
 faceModel="./model/opencv_face_detector_uint8.pb"
@@ -108,5 +108,5 @@ def video():
     # return Response(gen_frame(), mimetype='multipart/x-mixed-replace; boundary=frame')
     return render_template('vid.html')
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
