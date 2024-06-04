@@ -27,7 +27,7 @@ faceNet=cv2.dnn.readNet(faceModel,faceProto)
 ageNet=cv2.dnn.readNet(ageModel,ageProto)
 genderNet=cv2.dnn.readNet(genderModel,genderProto)
 
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(1)
 
 def gen_frame():
     while True:
