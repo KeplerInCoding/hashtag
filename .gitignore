@@ -1,5 +1,5 @@
 .DS_Store
 
-extension/build/
+build/
 
 gui.spec
