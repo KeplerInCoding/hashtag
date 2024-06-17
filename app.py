@@ -27,7 +27,7 @@ faceNet=cv2.dnn.readNet(faceModel,faceProto)
 ageNet=cv2.dnn.readNet(ageModel,ageProto)
 genderNet=cv2.dnn.readNet(genderModel,genderProto)
 
-cam = cv2.VideoCapture(1)
+cam = cv2.VideoCapture(0)
 
 def gen_frame():
     while True:
@@ -101,7 +101,7 @@ def index():
 
 @app.route('/video_feed')
 def video_feed():
-    return Response(video_capture(), mimetype='multipart/x-mixed-replace; boundary=frame')
+    return Response(gen_frame(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/video')
 def video():
