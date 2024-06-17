@@ -1,6 +1,13 @@
 from flask import Flask, render_template, Response
+from flask import request, jsonify, redirect, url_for
 import cv2
 import argparse
+from aiortc import RTCPeerConnection, RTCSessionDescription
+import json
+import uuid
+import asyncio
+import logging
+import time
 
 app = Flask(__name__,template_folder='template',static_folder='static')
 
@@ -99,6 +106,42 @@ def video_capture():
 def index():
     return render_template('index.html')
 
+async def offer_async():
+    params = await request.json
+    offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
+
+    # Create an RTCPeerConnection instance
+    pc = RTCPeerConnection()
+
+    # Generate a unique ID for the RTCPeerConnection
+    pc_id = "PeerConnection(%s)" % uuid.uuid4()
+    pc_id = pc_id[:8]
+
+    # Create a data channel named "chat"
+    # pc.createDataChannel("chat")
+
+    # Create and set the local description
+    await pc.createOffer(offer)
+    await pc.setLocalDescription(offer)
+
+    # Prepare the response data with local SDP and type
+    response_data = {"sdp": pc.localDescription.sdp, "type": pc.localDescription.type}
+
+    return jsonify(response_data)
+
+# Wrapper function for running the asynchronous offer function
+def offer():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    
+    future = asyncio.run_coroutine_threadsafe(offer_async(), loop)
+    return future.result()
+
+@app.route('/offer', methods=['POST'])
+def offer_route():
+    return offer()
+
+
 @app.route('/video_feed')
 def video_feed():
     return Response(gen_frame(), mimetype='multipart/x-mixed-replace; boundary=frame')
@@ -108,5 +151,5 @@ def video():
     # return Response(gen_frame(), mimetype='multipart/x-mixed-replace; boundary=frame')
     return render_template('vid.html')
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
